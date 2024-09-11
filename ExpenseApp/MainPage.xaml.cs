@@ -9,7 +9,7 @@
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void AddBudget_Clicked(object sender, EventArgs e)
         {
             count++;
 
