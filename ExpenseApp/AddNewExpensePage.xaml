@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpenseApp.AddNewExpensePage"
+             Title="AddNewExpensePage"
+             Background="White"
+             Padding="15">
+    <VerticalStackLayout>
+        <HorizontalStackLayout Spacing="20">
+            <Label Text="Name" FontSize="Medium" VerticalTextAlignment="Center"/>
+            <Entry Placeholder="Ex. Dinner" x:Name="Name" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Spacing="20">
+            <Label Text="Amount" FontSize="Medium" VerticalTextAlignment="Center"/>
+            <Entry x:Name="Amount" Placeholder="$" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Spacing="20">
+            <Label Text="Select a date" FontSize="Medium" VerticalTextAlignment="Center" />
+            <DatePicker x:Name="Date" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Spacing="20">
+            <Label Text="Category" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" />
+            <Picker x:Name="Category" Title="Category" VerticalTextAlignment="Start" >
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Grocery</x:String>
+                        <x:String>Gas</x:String>
+                        <x:String>Rent</x:String>
+                        <x:String>Restaurant</x:String>
+                        <x:String>Miscellaneous</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </HorizontalStackLayout>
+        
+        <HorizontalStackLayout Spacing="40" HorizontalOptions="Center">
+            <Button x:Name="Save" Clicked="Save_Clicked" Text="Save" WidthRequest="100"/>
+            <Button x:Name="Cancel" Clicked="Cancel_Clicked" Text="Cancel" WidthRequest="100"/>
+        </HorizontalStackLayout>
+        
+    </VerticalStackLayout>
+</ContentPage>
