@@ -11,17 +11,9 @@
                 />
 
         <VerticalStackLayout Spacing="10" Margin="5">
-        <Editor x:Name="BudgetPage"
-                Placeholder="Enter your Budget Name"
-                HeightRequest="100" />
-        <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
             <Button Text="Save"
                     x:Name="Savebutton"
                     Clicked="Savebutton_Clicked"/>
-            <Button Text="Delete" Grid.Column="1"
-                     x:Name="Deletebutton"
-                    Clicked="Deletebutton_Clicked"/>
-        </Grid>
-    </VerticalStackLayout>
+        </VerticalStackLayout>
     </StackLayout>
 </ContentPage>

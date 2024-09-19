@@ -15,15 +15,10 @@
                 />
 
             <Label
-                Text="Please add Monthly Budget"
+                Text="Start by adding your Monthly Budget"
                 Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+                SemanticProperties.HeadingLevel="Level3" />
 
-            <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="App for Monthly budget and Expenses" />
 
             <Button
                 x:Name="Budgetbtn"

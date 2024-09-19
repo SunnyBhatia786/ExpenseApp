@@ -17,12 +17,4 @@ public partial class Budget : ContentPage
         
 
     }
-
-    private void Deletebutton_Clicked(object sender, EventArgs e)
-    {
-        if (File.Exists(fileName))
-            File.Delete(fileName);
-
-       
-    }
 }
