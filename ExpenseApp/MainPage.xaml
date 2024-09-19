@@ -11,21 +11,17 @@
                 Source="expenses.png"
                 HeightRequest="185"
                 Aspect="AspectFit"
-                SemanticProperties.Description="Enter monthly expenses" />
+                SemanticProperties.Description="App for monthly expenses"
+                />
 
             <Label
-                Text="Please add Monthly Budget"
+                Text="Start by adding your Monthly Budget"
                 Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+                SemanticProperties.HeadingLevel="Level3" />
 
-            <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
             <Button
-                x:Name="CounterBtn"
+                x:Name="Budgetbtn"
                 Text="Add Budget" 
                 Clicked="AddBudget_Clicked"
                 HorizontalOptions="Fill" />

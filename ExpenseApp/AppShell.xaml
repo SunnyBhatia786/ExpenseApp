@@ -6,10 +6,12 @@
     xmlns:local="clr-namespace:ExpenseApp"
     Shell.FlyoutBehavior="Disabled"
     Title="ExpenseApp">
-
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+            Title="Expense"
+            ContentTemplate="{DataTemplate local:MainPage}"
+           Icon="{OnPlatform 'icon_expense.png'}"
+          />
 
-</Shell>
+</Shell>     
+
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpenseApp.Budget"
+             Title="Budget">
+    <StackLayout Padding="20">
+        <Label Text="Enter a decimal value:" />
+        <Entry x:Name="DecimalEntry"
+               Keyboard="Numeric"
+               Placeholder="e.g., 123.45"
+                />
+
+        <VerticalStackLayout Spacing="10" Margin="5">
+            <Button Text="Save"
+                    x:Name="Savebutton"
+                    Clicked="Savebutton_Clicked"/>
+        </VerticalStackLayout>
+    </StackLayout>
+</ContentPage>

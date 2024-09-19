@@ -13,6 +13,8 @@
 
             var newExpenseDialog =  new AddNewExpensePage();
             await Navigation.PushModalAsync(newExpenseDialog);
+
+            await Navigation.PushAsync(new Budget());
         }
     }
 
