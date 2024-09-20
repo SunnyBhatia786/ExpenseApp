@@ -70,6 +70,8 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="AddNewExpensePage.xaml">
+          <Generator>MSBuild:Compile</Generator>
+          </MauiXaml>
 	  <MauiXaml Update="Budget.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
