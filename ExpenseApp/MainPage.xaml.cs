@@ -6,6 +6,10 @@
         public MainPage()
         {
             InitializeComponent();
+            MessagingCenter.Subscribe<Budget, decimal>(this, "budgetUpdated", (sender, budget) =>
+            {
+                budgetLabel.Text = $"Your budget is:{budget:C2}";
+            });
         }
 
         private async void AddBudget_Clicked(object sender, EventArgs e)

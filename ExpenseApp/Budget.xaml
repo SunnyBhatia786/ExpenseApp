@@ -8,6 +8,7 @@
         <Entry x:Name="DecimalEntry"
                Keyboard="Numeric"
                Placeholder="e.g., 123.45"
+               TextChanged="DecimalEntry_TextChanged"
                 />
 
         <VerticalStackLayout Spacing="10" Margin="5">

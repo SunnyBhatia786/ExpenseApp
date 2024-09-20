@@ -25,6 +25,11 @@
                 Text="Add Budget" 
                 Clicked="AddBudget_Clicked"
                 HorizontalOptions="Fill" />
+
+            <Label x:Name="budgetLabel"
+                   Text="Your Budget is"
+                   FontSize="Large"
+                   HorizontalOptions="Center" />
         </VerticalStackLayout>
     </ScrollView>
 
