@@ -10,11 +10,13 @@
 
         private async void AddBudget_Clicked(object sender, EventArgs e)
         {
-
-            var newExpenseDialog =  new AddNewExpensePage();
-            await Navigation.PushModalAsync(newExpenseDialog);
-
             await Navigation.PushAsync(new Budget());
+        }
+
+        private async void AddNewExpense_Clicked(object sender, EventArgs e)
+        {
+            var newExpenseDialog = new AddNewExpensePage();
+            await Navigation.PushModalAsync(newExpenseDialog);
         }
     }
 
