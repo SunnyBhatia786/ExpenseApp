@@ -57,6 +57,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Models\**" />
+	  <Compile Remove="Models\**" />
+	  <EmbeddedResource Remove="Models\**" />
+	  <MauiCss Remove="Models\**" />
+	  <MauiXaml Remove="Models\**" />
+	  <None Remove="Models\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Images\Expenses.png" />
 	  <None Remove="Resources\Images\Icon_about.png" />
 	  <None Remove="Resources\Images\Icon_expense.png" />
@@ -69,13 +78,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="AddNewExpensePage.xaml">
+          <Generator>MSBuild:Compile</Generator>
+          </MauiXaml>
 	  <MauiXaml Update="Budget.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Models\" />
 	  <Folder Include="Properties\NewFolder\" />
 	</ItemGroup>
 
