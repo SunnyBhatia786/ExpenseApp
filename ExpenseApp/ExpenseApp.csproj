@@ -67,8 +67,13 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\Expenses.png" />
+	  <None Remove="Resources\Images\fuel.png" />
+	  <None Remove="Resources\Images\grocery.png" />
 	  <None Remove="Resources\Images\Icon_about.png" />
 	  <None Remove="Resources\Images\Icon_expense.png" />
+	  <None Remove="Resources\Images\miscellaneous.png" />
+	  <None Remove="Resources\Images\rent.png" />
+	  <None Remove="Resources\Images\restaurant.png" />
 	</ItemGroup>
 
 	<ItemGroup>

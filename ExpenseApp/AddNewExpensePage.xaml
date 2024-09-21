@@ -21,20 +21,22 @@
             <DatePicker x:Name="Date" />
         </HorizontalStackLayout>
 
-        <HorizontalStackLayout Spacing="20">
-            <Label Text="Category" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" />
-            <Picker x:Name="Category" Title="Category" VerticalTextAlignment="Start" >
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Grocery</x:String>
-                        <x:String>Gas</x:String>
-                        <x:String>Rent</x:String>
-                        <x:String>Restaurant</x:String>
-                        <x:String>Miscellaneous</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-        </HorizontalStackLayout>
+        <VerticalStackLayout Spacing="20" Margin="0,10,10,20">
+            <Label Text="Choose a category from below:"  FontSize="Medium" HorizontalTextAlignment="Start"/>
+            <ListView x:Name="categoryListview" HorizontalOptions="CenterAndExpand" WidthRequest="200" SeparatorVisibility="None"
+                      ItemSelected="categoryListview_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="5">
+                                <Label Text="{Binding CategoryName}" VerticalTextAlignment="Center" Padding="10,0" />
+                                <Image Source="{Binding IconFile}" WidthRequest="30" HeightRequest="30" Margin="10" HorizontalOptions="EndAndExpand" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
         
         <HorizontalStackLayout Spacing="40" HorizontalOptions="Center">
             <Button x:Name="Save" Clicked="Save_Clicked" Text="Save" WidthRequest="100"/>

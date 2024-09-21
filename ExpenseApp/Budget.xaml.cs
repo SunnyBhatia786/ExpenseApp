@@ -3,7 +3,7 @@ namespace ExpenseApp;
 public partial class Budget : ContentPage
 
 {
-    string fileName = Path.Combine(FileSystem.AppDataDirectory, "Expense.txt");
+    string fileName = Path.Combine(FileSystem.AppDataDirectory, "Budget.txt");
 	public Budget()
 	{
 		InitializeComponent();
