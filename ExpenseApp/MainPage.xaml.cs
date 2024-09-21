@@ -8,7 +8,7 @@
             InitializeComponent();
             MessagingCenter.Subscribe<Budget, decimal>(this, "budgetUpdated", (sender, budget) =>
             {
-                budgetLabel.Text = $"Your budget is:{budget:C2}";
+                budgetLabel.Text = $"Your budget is: {budget:C2}";
             });
         }
 

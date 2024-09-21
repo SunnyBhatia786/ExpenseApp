@@ -30,6 +30,12 @@
                    Text="Your Budget is"
                    FontSize="Large"
                    HorizontalOptions="Center" />
+
+			<Label x:Name="listofexpense"
+				   Text="Spending"
+				   FontSize="Large" />
+				   
+				   
         </VerticalStackLayout>
     </ScrollView>
 

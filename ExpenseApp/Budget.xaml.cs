@@ -3,10 +3,10 @@ namespace ExpenseApp;
 public partial class Budget : ContentPage
 
 {
-    string fileName = Path.Combine(FileSystem.AppDataDirectory, "Budget.txt");
-	public Budget()
-	{
-		InitializeComponent();
+    string fileName = Path.Combine(FileSystem.AppDataDirectory, "Expense.txt");
+    public Budget()
+    {
+        InitializeComponent();
         if (File.Exists(fileName))
         {
             string fileContent = File.ReadAllText(fileName);
@@ -25,19 +25,19 @@ public partial class Budget : ContentPage
     {   
         //bring the budget from Entry
         String input = DecimalEntry.Text;
-     
+
         if (decimal.TryParse(input, out decimal budget))
         {
-            MessagingCenter.Send(this, "BudgetUpdated", budget);
+            MessagingCenter.Send(this, "budgetUpdated", budget);
             await Navigation.PopAsync(); //move previous page
         }
         else
         {
             await DisplayAlert("Invalid Input", "Please enter a valid budget amount.", "OK");
         }
-            
-        
-	}
+
+
+    }
 
     //check if it number or not
     private void DecimalEntry_TextChanged(object sender, TextChangedEventArgs e)
@@ -48,7 +48,7 @@ public partial class Budget : ContentPage
             DecimalEntry.TextColor = Colors.Black;
         }
         else
-    {
+        {
             DecimalEntry.Text = e.OldTextValue;
             DecimalEntry.TextColor = Colors.Red;
         }
