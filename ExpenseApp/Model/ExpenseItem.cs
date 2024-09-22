@@ -8,9 +8,9 @@ namespace ExpenseApp.Model
 {
     public class ExpenseItem
     {
-        public string Name { get; set; }
+        public string Itemname { get; set; }
         public string Amount { get; set; }
-        public string DateOfExpense { get; set; }
+        public DateTime Date { get; set; }
         public Category Category { get; set; }
     }
    public enum Category

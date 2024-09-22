@@ -7,33 +7,58 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
+            <Label Text="Start by adding your Monthly Budget"
+                   Style="{StaticResource Headline}"
+                   SemanticProperties.HeadingLevel="Level3" />
             <Image
                 Source="expenses.png"
-                HeightRequest="185"
+                HeightRequest="100"
                 Aspect="AspectFit"
                 SemanticProperties.Description="App for monthly expenses"
                 />
-            <Button Text="+" Clicked="AddNewExpense_Clicked" x:Name="AddNewExpense" />
-            <Label
-                Text="Start by adding your Monthly Budget"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level3" />
+            
+                <Button Text="+" Clicked="AddNewExpense_Clicked" x:Name="AddNewExpense" />
 
-
-            <Button
-                x:Name="Budgetbtn"
-                Text="Add Budget" 
-                Clicked="AddBudget_Clicked"
-                HorizontalOptions="Fill" />
+                <Button
+                    x:Name="Budgetbtn" 
+                    Text="Add Budget" 
+                    Clicked="AddBudget_Clicked"
+                 />
+           
+           
 
             <Label x:Name="budgetLabel"
                    Text="Your Budget is"
                    FontSize="Large"
                    HorizontalOptions="Center" />
 
-			<Label x:Name="listofexpense"
+            <Button Text="Delete All"
+                    x:Name="DeleteButton"
+                    Clicked="DeleteButton_Clicked" />
+
+            <Label x:Name="listofexpense"
 				   Text="Spending"
 				   FontSize="Large" />
+
+            <CollectionView x:Name="expenseitemCollection"
+                            ItemsSource="{Binding Expenses}"
+                            Margin="20"
+                            SelectionMode="Single"
+                            SelectionChanged="expenseitemCollection_SelectionChanged">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Itemname}" FontSize="22" />
+                            <Label Text="{Binding Amount}" FontSize="22" />
+                            <Label Text="{Binding Date}" FontSize="22" TextColor="Grey" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 				   
 				   
         </VerticalStackLayout>
