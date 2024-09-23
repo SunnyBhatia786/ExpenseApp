@@ -11,10 +11,12 @@ public partial class AddNewExpensePage : ContentPage
         public string IconFile { get; set; }
     }
     CategoryItem selectedCategory = new CategoryItem();
-    string expenseFilename = Path.Combine(FileSystem.AppDataDirectory, "Expense.txt");
+    string expenseFilename = Path.Combine(FileSystem.AppDataDirectory, "ExpenseList.txt");
+    ExpenseItem[] expenseItems = new ExpenseItem[1];
     public AddNewExpensePage()
 	{
 		InitializeComponent();
+        LoadAllExpenseItems( ref expenseItems);
         var categories = new List<CategoryItem>
         {
             new CategoryItem
@@ -46,6 +48,26 @@ public partial class AddNewExpensePage : ContentPage
 
     }
 
+    private void LoadAllExpenseItems(ref ExpenseItem[] expenseItemsObj)
+    {
+        StreamReader reader = new StreamReader(expenseFilename);
+        if (reader.Peek() >= 0)
+        {
+            int size = Convert.ToInt32(reader.ReadLine());
+            expenseItemsObj = new ExpenseItem[size];
+            for (int index = 0; index<expenseItemsObj.Length;  index++)
+            {
+                expenseItemsObj[index] = new ExpenseItem();
+                expenseItemsObj[index].Name = reader.ReadLine();
+                expenseItemsObj[index].Amount = reader.ReadLine();
+                expenseItemsObj[index].DateOfExpense = reader.ReadLine();
+                expenseItemsObj[index].Category = (Category)Enum.Parse(typeof(Category), reader.ReadLine());
+                    
+            }
+        }
+        reader.Close();
+    }
+
     private async void Save_Clicked(object sender, EventArgs e)
     {
         var item = new ExpenseItem();
@@ -61,7 +83,13 @@ public partial class AddNewExpensePage : ContentPage
     {
         if (File.Exists(expenseFilename))
         {
-            
+            StreamWriter writer = new StreamWriter(expenseFilename);
+            writer.WriteLine(expenseItems.Length + 1);
+
+        }
+        else
+        {
+
         }
     }
 
