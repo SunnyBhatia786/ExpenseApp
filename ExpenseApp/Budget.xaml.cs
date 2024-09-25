@@ -4,38 +4,30 @@ public partial class Budget : ContentPage
 
 {
     string fileName = Path.Combine(FileSystem.AppDataDirectory, "Expense.txt");
-    public Budget()
+
+    public Budget(string s)
     {
         InitializeComponent();
-        if (File.Exists(fileName))
-        {
-            string fileContent = File.ReadAllText(fileName);
-            if (double.TryParse(fileContent, out double number))
-            {
-                var newPage = new Budget();
-                Navigation.PushAsync(newPage);
-            }
-            else
-            {
-                DisplayAlert("Invlid Data", "Invlid Data","OK");
-            }
+        if (s != "0") {
+            DecimalEntry.Text = s;
         }
+        
     }
     private async void Savebutton_Clicked(object sender, EventArgs e)
     {   
         //bring the budget from Entry
         String input = DecimalEntry.Text;
-
-        if (decimal.TryParse(input, out decimal budget))
+        if (File.Exists(fileName))
         {
-            MessagingCenter.Send(this, "budgetUpdated", budget);
-            await Navigation.PopAsync(); //move previous page
+            File.WriteAllText(fileName, input) ;
+            
+            await Navigation.PopAsync();
         }
         else
         {
-            await DisplayAlert("Invalid Input", "Please enter a valid budget amount.", "OK");
+            File.WriteAllText(fileName, input);
+            await Navigation.PopAsync();
         }
-
 
     }
 

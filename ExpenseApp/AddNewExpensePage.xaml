@@ -8,18 +8,18 @@
     <VerticalStackLayout>
         <HorizontalStackLayout Spacing="20">
             <Label Text="Name" FontSize="Medium" VerticalTextAlignment="Center"/>
-            <Entry Placeholder="Ex. Dinner" x:Name="Name" Text="{Binding Text}"/>
+            <Entry Placeholder="Ex. Dinner" x:Name="Name"/>
         </HorizontalStackLayout>
 
         <HorizontalStackLayout Spacing="20">
             <Label Text="Amount" FontSize="Medium" VerticalTextAlignment="Center"/>
-            <Entry x:Name="Amount" Placeholder="$" Text="{Binding Amount}" />
+            <Entry x:Name="Amount" Placeholder="$" />
         </HorizontalStackLayout>
 
-        <!--<HorizontalStackLayout Spacing="20">
+        <HorizontalStackLayout Spacing="20">
             <Label Text="Select a date" FontSize="Medium" VerticalTextAlignment="Center" />
-            <DatePicker x:Name="Date" TextColor="{Binding Date}"/>
-        </HorizontalStackLayout>-->
+            <DatePicker x:Name="Date" />
+        </HorizontalStackLayout>
 
         <VerticalStackLayout Spacing="20" Margin="0,10,10,20">
             <Label Text="Choose a category from below:"  FontSize="Medium" HorizontalTextAlignment="Start"/>

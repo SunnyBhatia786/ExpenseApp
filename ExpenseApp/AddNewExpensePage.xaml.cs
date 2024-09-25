@@ -1,5 +1,6 @@
 using ExpenseApp.Model;
 using System.Diagnostics;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ExpenseApp;
 
@@ -10,11 +11,7 @@ public partial class AddNewExpensePage : ContentPage
     {
         set { LoadExpenseItem(value); }
     }
-    public class CategoryItem
-    {
-        public string CategoryName { get; set; }
-        public string IconFile { get; set; }
-    }
+   
     CategoryItem selectedCategory = new CategoryItem();
     string expenseFilename = Path.Combine(FileSystem.AppDataDirectory, "Expense.txt");
     public AddNewExpensePage()
@@ -58,19 +55,13 @@ public partial class AddNewExpensePage : ContentPage
     {
         if (BindingContext is Model.ExpenseItem expenseitem)
         {
-            String expenseData = $"{Name.Text},{Amount.Text}";
+            Debug.WriteLine(Date.Date.ToShortDateString());
+            Debug.WriteLine(Date.Date.ToString("yyyy-MM-dd"));
+            string expenseData = $"{Name.Text},{Amount.Text},{Date.Date.ToString("yyyy-MM-dd")},{selectedCategory.CategoryName}";
             File.WriteAllText(expenseitem.Itemname, expenseData);
         }
 
         await Shell.Current.GoToAsync("..");
-    }
-
-    private void saveExpenseToFile(ExpenseItem item)
-    {
-        if (File.Exists(expenseFilename))
-        {
-
-        }
     }
 
     private async void Cancel_Clicked(object sender, EventArgs e)
@@ -92,6 +83,7 @@ public partial class AddNewExpensePage : ContentPage
         {
             expenseItemModel.Date = File.GetCreationTime(itemName);
             expenseItemModel.Itemname = File.ReadAllText(itemName);
+            expenseItemModel.ItemFileName = itemName;
         }
 
         BindingContext = expenseItemModel;

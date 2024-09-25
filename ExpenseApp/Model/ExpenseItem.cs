@@ -11,14 +11,14 @@ namespace ExpenseApp.Model
         public string Itemname { get; set; }
         public string Amount { get; set; }
         public DateTime Date { get; set; }
-        public Category Category { get; set; }
+        public CategoryItem Category { get; set; }
+        public string ItemFileName {get; set;}
+        public string DateString { get; set; }
     }
-   public enum Category
+    public class CategoryItem
     {
-        Grocery,
-        Rent,
-        Restaurant,
-        Gas,
-        Miscellaneous
+        public string CategoryName { get; set; }
+        public string IconFile { get; set; }
     }
+   
 }
