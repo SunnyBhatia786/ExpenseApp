@@ -4,7 +4,6 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ExpenseApp;
 
-[QueryProperty(nameof(ItemId), nameof(ItemId))]
 public partial class AddNewExpensePage : ContentPage
 {
     public string ItemId
