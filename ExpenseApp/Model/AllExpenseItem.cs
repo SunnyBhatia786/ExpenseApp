@@ -28,7 +28,7 @@ namespace ExpenseApp.Model
                     return new ExpenseItem()
                     {
                         Itemname = contents[0],
-                        Amount = $"${contents[1]}", 
+                        Amount = $"${contents[1]}",
                         Date = DateTime.Parse(contents[2]),
                         DateString = contents[2],
                         Category = new CategoryItem()
