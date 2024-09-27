@@ -25,20 +25,29 @@ namespace ExpenseApp.Model
                 .Select(filename => {
                     string content = File.ReadAllText(filename); // 0.99
                     string[] contents = content.Split(','); // [0.99]
-                    return new ExpenseItem()
+                    try
                     {
-                        Itemname = contents[0],
-                        Amount = $"${contents[1]}",
-                        Date = DateTime.Parse(contents[2]),
-                        DateString = contents[2],
-                        Category = new CategoryItem()
+                        return new ExpenseItem()
                         {
-                            CategoryName = contents[3],
-                            IconFile = GetIconFile(contents[3])
-                        },
-                        ItemFileName = filename
-                    };
+                            Itemname = contents[0],
+                            Amount = $"${contents[1]}",
+                            Date = DateTime.Parse(contents[2]),
+                            DateString = contents[2],
+                            Category = new CategoryItem()
+                            {
+                                CategoryName = contents[3],
+                                IconFile = GetIconFile(contents[3])
+                            },
+                            ItemFileName = filename
+                        };
+                    }
+                    catch (Exception ex)
+                    {
+                        File.Delete(filename);
+                    }
+                    return null;
                 })
+                .Where(item => item != null)
                 .OrderBy(expenseitem => expenseitem.Date);
 
             foreach (var expenseitem in expenseitems)
