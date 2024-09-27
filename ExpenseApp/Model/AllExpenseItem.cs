@@ -43,6 +43,7 @@ namespace ExpenseApp.Model
                     }
                     catch (Exception ex)
                     {
+
                         File.Delete(filename);
                     }
                     return null;

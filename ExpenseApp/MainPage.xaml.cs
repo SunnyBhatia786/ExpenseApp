@@ -13,6 +13,7 @@ namespace ExpenseApp
         public MainPage()
         {
             InitializeComponent();
+            
             BindingContext = new Model.AllExpenseItem();
         }
         private void HandleViewWithBudget()
